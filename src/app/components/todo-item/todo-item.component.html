@@ -1,0 +1,23 @@
+<div class="todo-item">
+  <div class="todo">
+    <div class="custom-check">
+      <input
+        type="checkbox"
+        name="check"
+        [id]="todoItem.id"
+        aria-label="check"
+        (change)="changeCompleted(todoItem.id)"
+        [checked]="todoItem.isCompleted"
+      />
+      <label [for]="todoItem.id">
+        <i class="icon-check"></i>
+      </label>
+    </div>
+    <p [ngClass]="todoItem.isCompleted ? 'checked' : ''">
+      {{ todoItem.name }}
+    </p>
+  </div>
+  <button (click)="deleteTodo(todoItem.id)" class="button-close">
+    <i class="icon-close"></i>
+  </button>
+</div>

@@ -1,1 +1,251 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen
+  font-nunito
+   text-xs
+  md:text-lg;
+}
+
+main {
+  @apply min-h-screen;
+}
+
+/* Dark Theme Config */
+body .dark-theme {
+  @apply bg-veryDarkBlue
+  transition-all;
+}
+
+.dark-theme .todo-list {
+  @apply bg-veryDarkDesaturatedBlue;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .todo-item {
+  @apply border-b-veryDarkGrayishBlue
+  text-lightGrayishBlueDark;
+}
+
+.dark-theme .filter {
+  @apply bg-veryDarkDesaturatedBlue;
+  color: hsla(235, 16%, 43%, 1);
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .todo-list__footer {
+  @apply bg-veryDarkDesaturatedBlue;
+  color: hsla(235, 16%, 43%, 1);
+}
+
+.dark-theme .custom-check label::before {
+  background-color: hsla(237, 14%, 26%, 1);
+}
+
+.dark-theme .form-control input {
+  @apply bg-veryDarkDesaturatedBlue
+  text-darkGrayishBlue;
+}
+
+#app.dark-theme #hero {
+  @apply bg-hero-image-mobile-dark
+  md:bg-hero-image-desktop-dark;
+}
+
+#app {
+  @apply transition-all;
+}
+
+/* Dark Theme Config */
+
+#hero {
+  @apply absolute
+  inset-x-0
+  w-full
+  bg-repeat-space
+  bg-cover
+  h-[12.5rem]
+  md:h-[18.75rem];
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 10px;
+}
+.todo-list::-webkit-scrollbar-track {
+  background-color: #efefef;
+}
+.todo-list::-webkit-scrollbar-thumb {
+  background-color: #999999;
+  border-radius: 10px;
+  block-size: 3.125rem;
+}
+
+#app.light-theme #hero {
+  @apply bg-hero-image-mobile-light
+  md:bg-hero-image-desktop-light;
+}
+
+.wrapper {
+  @apply mx-auto
+  max-w-[33.75rem];
+}
+
+.app-content {
+  @apply relative
+  z-50
+  px-6;
+}
+
+.todo-header {
+  @apply flex
+  items-center
+  justify-between
+  pt-12
+  pb-10;
+}
+
+.todo-header h1 {
+  @apply text-2xl
+  uppercase
+  tracking-widest
+  text-veryLightGray
+  font-bold
+  md:text-3xl;
+}
+
+.todo-header button {
+  @apply text-2xl text-veryLightGray;
+}
+
+.form-control {
+  @apply bg-veryLightGray
+  overflow-hidden
+  rounded;
+}
+.form-control input {
+  @apply w-full
+  px-5
+  py-3;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+.todo-list {
+  @apply bg-veryLightGray
+  rounded
+  min-h-full
+  max-h-[18.75rem]
+  overflow-auto
+  mt-4;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+s .todo-list__footer {
+  @apply px-5
+  flex
+  items-center
+  justify-between
+  text-darkGrayishBlue
+  py-3;
+}
+
+.todo-item {
+  @apply flex
+  items-center
+  justify-between
+  px-5
+
+  text-vryDarkGrayishBlue
+  gap-3
+  border-b
+  border-b-lightGrayishBlue
+  py-4;
+}
+.todo {
+  @apply flex
+  items-start
+  cursor-pointer
+  gap-3;
+}
+.todo-item p {
+  @apply text-ellipsis
+  whitespace-nowrap
+  cursor-pointer
+  overflow-hidden;
+}
+
+.todo-item .checked {
+  @apply line-through text-darkGrayishBlue;
+}
+
+.button-close {
+  @apply text-darkGrayishBlue;
+}
+
+/* Custom Check */
+.custom-check input {
+  display: none;
+}
+
+.custom-check label i {
+  @apply text-lightGrayishBlue text-xs;
+}
+
+.custom-check label {
+  @apply w-5
+  h-5
+  inline-flex
+  items-center
+  justify-center
+  relative
+  rounded-full
+  cursor-pointer
+  md:w-6
+  md:h-6;
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
+
+.custom-check input:checked + label::before {
+  display: none;
+}
+
+.custom-check label::before {
+  @apply absolute
+  w-[1.1875rem]
+  rounded-full
+  h-[1.1875rem]
+  md:w-[1.2188rem]
+  md:h-[1.2188rem]
+  bg-veryLightGray;
+  content: "";
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/** Filter */
+
+.filter {
+  @apply bg-veryLightGray
+  py-4
+  px-6
+  flex
+  rounded
+  items-center
+  justify-evenly
+  mt-4
+  text-darkGrayishBlue;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+.filter button {
+  @apply capitalize font-bold;
+}
+
+.filter button.is-active {
+  @apply text-brightBlue;
+}
+
+.todo-list h3 {
+  @apply p-5 text-center;
+}
